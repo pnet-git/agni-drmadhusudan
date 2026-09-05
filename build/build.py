@@ -27,7 +27,11 @@ head = re.sub(r"<title>.*?</title>",
               "<title>Agni Drops — Lose 3 to 4 kg In 30 Days, No Starving, No Gym | Dr. Madhu Sudan</title>", head, flags=re.S)
 head = re.sub(r'<meta name="description" content=".*?">',
               '<meta name="description" content="Ayurvedic metabolism drops by Dr. Madhu Sudan. Wake the digestive fire. Lose 3 to 4 kg in your first 30 days with no starving, no gym, no laxative. Free online consultation with every pack.">', head, flags=re.S)
-head = head.replace('<link rel="icon" href="/favicon.ico">', '<link rel="icon" href="/public/favicon.png">')
+icons = ('\n<link rel="icon" type="image/svg+xml" href="/public/favicon.svg">'
+         '\n<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">'
+         '\n<link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">'
+         '\n<link rel="shortcut icon" href="/public/favicon-32.png">\n')
+head = head.replace("<!-- Meta Pixel Code -->", icons + "<!-- Meta Pixel Code -->", 1)
 
 extra_css = (HERE / "extra.css").read_text(encoding="utf-8")
 head = head.replace("</style>", "\n/* ===== AGNI ADDITIONS ===== */\n" + extra_css + "\n</style>")

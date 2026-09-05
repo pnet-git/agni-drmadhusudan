@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="background:#333">
+<script>
+function draw(size, radiusRatio) {
+  const c = document.createElement('canvas'); c.width = size; c.height = size;
+  const x = c.getContext('2d');
+  const r = size * radiusRatio;
+  x.fillStyle = '#1F4D3A';
+  x.beginPath(); x.roundRect(0, 0, size, size, r); x.fill();
+  x.save();
+  x.translate(size/2, size*0.53); x.scale(size/64*0.42, size/64*0.42);
+  const g = x.createLinearGradient(-34,-58,34,46); g.addColorStop(0,'#F2C94C'); g.addColorStop(0.55,'#D99A1E'); g.addColorStop(1,'#B57A10');
+  x.fillStyle = g;
+  x.fill(new Path2D("M0 -58 C 22 -34, 34 -16, 34 6 C 34 30, 18 46, 0 46 C -18 46, -34 30, -34 6 C -34 -8, -28 -20, -18 -28 C -18 -12, -10 -4, -4 -4 C -10 -20, -8 -40, 0 -58 Z"));
+  x.fillStyle = 'rgba(251,247,236,0.92)';
+  x.fill(new Path2D("M0 -22 C 10 -10, 16 0, 16 12 C 16 24, 8 32, 0 32 C -8 32, -16 24, -16 12 C -16 4, -12 -2, -6 -8 C -6 0, -2 4, 0 4 C -4 -6, -4 -14, 0 -22 Z"));
+  x.restore();
+  document.body.appendChild(c);
+  return c.toDataURL('image/png');
+}
+window.OUT = { f32: draw(32, 0.22), f180: draw(180, 0.22), f512: draw(512, 0.22) };
+</script>
+</body></html>
