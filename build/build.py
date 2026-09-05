@@ -31,7 +31,20 @@ icons = ('\n<link rel="icon" type="image/svg+xml" href="/public/favicon.svg">'
          '\n<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">'
          '\n<link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">'
          '\n<link rel="shortcut icon" href="/public/favicon-32.png">\n')
-head = head.replace("<!-- Meta Pixel Code -->", icons + "<!-- Meta Pixel Code -->", 1)
+share = ('\n<meta property="og:type" content="website">'
+         '\n<meta property="og:url" content="https://agni.drmadhusudan.com/">'
+         '\n<meta property="og:site_name" content="Agni by Dr. Madhu Sudan">'
+         '\n<meta property="og:title" content="Agni Drops: lose 3 to 4 kg in your first 30 days. No starving, no gym.">'
+         '\n<meta property="og:description" content="Ayurvedic drops by Dr. Madhu Sudan that wake the digestive fire. Free online consultation with every pack.">'
+         '\n<meta property="og:image" content="https://agni.drmadhusudan.com/images/og-agni.jpg">'
+         '\n<meta property="og:image:width" content="1200">'
+         '\n<meta property="og:image:height" content="630">'
+         '\n<meta property="og:image:alt" content="Agni drops by Dr. Madhu Sudan">'
+         '\n<meta name="twitter:card" content="summary_large_image">'
+         '\n<meta name="twitter:title" content="Agni Drops: lose 3 to 4 kg in your first 30 days. No starving, no gym.">'
+         '\n<meta name="twitter:description" content="Ayurvedic drops by Dr. Madhu Sudan that wake the digestive fire. Free online consultation with every pack.">'
+         '\n<meta name="twitter:image" content="https://agni.drmadhusudan.com/images/og-agni.jpg">\n')
+head = head.replace("<!-- Meta Pixel Code -->", icons + share + "<!-- Meta Pixel Code -->", 1)
 
 extra_css = (HERE / "extra.css").read_text(encoding="utf-8")
 head = head.replace("</style>", "\n/* ===== AGNI ADDITIONS ===== */\n" + extra_css + "\n</style>")

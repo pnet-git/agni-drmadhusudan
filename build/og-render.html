@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+</head><body style="background:#333;margin:0">
+<canvas id="c" width="1200" height="630"></canvas>
+<script>
+async function run() {
+  await document.fonts.load('700 72px "Cormorant Garamond"');
+  await document.fonts.load('500 30px "DM Sans"');
+  await document.fonts.load('700 30px "DM Sans"');
+  const c = document.getElementById('c'), x = c.getContext('2d');
+  const g = x.createLinearGradient(0,0,1200,630); g.addColorStop(0,'#1F4D3A'); g.addColorStop(1,'#123526');
+  x.fillStyle = g; x.fillRect(0,0,1200,630);
+  const glow = x.createRadialGradient(900,330,40,900,330,420); glow.addColorStop(0,'rgba(242,201,76,0.35)'); glow.addColorStop(1,'rgba(242,201,76,0)');
+  x.fillStyle = glow; x.fillRect(0,0,1200,630);
+  const img = new Image(); img.src = '/images/agni-bottle.svg';
+  await new Promise(r => { img.onload = r; });
+  // bottle: source 800x1000, crop the cream background by drawing a rounded panel behind
+  x.save(); x.beginPath(); x.roundRect(720, 40, 420, 550, 28); x.clip();
+  x.drawImage(img, 0, 0, 800, 1000, 700, 40, 460, 575); x.restore();
+  x.fillStyle = '#F2C94C'; x.font = '700 22px "DM Sans"'; x.letterSpacing = '5px';
+  x.fillText('NEW FROM DR. MADHU SUDAN', 70, 130);
+  x.letterSpacing = '0px';
+  x.fillStyle = '#FBF7EC'; x.font = '700 74px "Cormorant Garamond"';
+  x.fillText('Lose 3 to 4 kg', 70, 235); x.fillText('in your first', 70, 315); x.fillText('30 days.', 70, 395);
+  x.fillStyle = '#F2C94C'; x.font = 'italic 700 46px "Cormorant Garamond"';
+  x.fillText('No starving. No gym.', 70, 460);
+  x.fillStyle = '#CFE3D6'; x.font = '500 26px "DM Sans"';
+  x.fillText('Ayurvedic drops that wake the digestive fire.', 70, 525);
+  x.fillStyle = '#F2C94C'; x.font = '700 24px "DM Sans"';
+  x.fillText('agni.drmadhusudan.com', 70, 575);
+  window.OUT = c.toDataURL('image/png');
+  window.READY = true;
+}
+run();
+</script>
+</body></html>

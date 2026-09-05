@@ -1,5 +1,5 @@
 import http.server, base64, json, pathlib
-OUT = pathlib.Path(__file__).resolve().parent.parent / "public"
+OUT = pathlib.Path(__file__).resolve().parent.parent / "images"
 class H(http.server.BaseHTTPRequestHandler):
     def _cors(self):
         self.send_header("Access-Control-Allow-Origin", "*"); self.send_header("Access-Control-Allow-Headers", "Content-Type")
