@@ -11,6 +11,8 @@
 10. The 30 day eating plan: do you already have one written, or should we write it from your notes.
 11. A reel of you talking about Agni, and please hold the bottle and show it in the same video. We will cut the page pictures from it.
 12. Payment: shall we create the two Razorpay pages in your account, Rs900 for 10 days and Rs2,400 for 30 days.
-13. Has the name Agni been checked or registered as a trademark.
+13. Has the name Agni been checked or registered as a trademark, or should it be Gandiva Agni to match the other products.
 14. Who ships it and how many days delivery takes.
-15. Please courier one sample bottle to Akash, so we can photograph it and try it ourselves.
+15. One sample bottle by Porter to Akash, for the photo shoot, to try it, and for a possible Peepoye collaboration.
+
+Sent to Dr Madhu on WhatsApp by Akash, 5 Sep 2026. Waiting on all 15.
