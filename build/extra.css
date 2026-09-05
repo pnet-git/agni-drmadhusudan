@@ -100,3 +100,14 @@
 }
 .faq-question { padding-top: 6px; padding-bottom: 6px; }
 @media (max-width: 768px) { .lang-toggle { position: absolute; } }
+
+/* phone: one line in the top strip and one line in the bottom bar */
+.tb-short, .mdk-short { display: none; }
+@media (max-width: 768px) {
+  .top-bar .tb-long, .mdk-sticky-left .mdk-long { display: none; }
+  .top-bar .tb-short { display: inline; white-space: nowrap; margin: 0; }
+  .top-bar { padding-right: 112px; font-size: 12px; line-height: 1.4; padding-top: 14px; padding-bottom: 14px; }
+  .mdk-short { display: block; white-space: nowrap; font-size: 14px; }
+  .mdk-sticky-btn { padding: 13px 18px; white-space: nowrap; }
+}
+@media (max-width: 360px) { .tb-short { font-size: 11px; } .mdk-short { font-size: 13px; } }
