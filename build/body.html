@@ -1,0 +1,691 @@
+<!-- STICKY DISCOUNT BANNER -->
+<div class="cf-announce-bar">
+  <div class="cf-ab-inner">
+    <span class="cf-ab-text" data-hi="आज का ऑफर सिर्फ आज के लिए">TODAY'S OFFER, TODAY ONLY</span>
+    <span class="cf-ab-timer"><span data-hi="खत्म होगा&nbsp;">Ends in&nbsp;</span><span id="discountTimer">4:00</span></span>
+  </div>
+</div>
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle" id="langToggle">
+  <button type="button" class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+  <button type="button" class="lang-btn" data-lang="hi" onclick="setLang('hi')">हिंदी</button>
+</div>
+
+<!-- EXIT INTENT POPUP -->
+<div class="exit-popup" id="exitPopup">
+  <div class="exit-popup-content">
+    <button class="exit-popup-close" onclick="closeExitPopup()">×</button>
+    <div class="exit-popup-eyebrow">⏳ <span data-hi="आज का ऑफर जल्द खत्म">Today's Offer Ends Soon</span></div>
+    <h2 data-hi="रुकिए, जाने से पहले।">Wait. Before You Go.</h2>
+    <p data-hi="10 दिन का ट्रायल पैक। पहले हफ्ते में फर्क महसूस कीजिए। साथ में डॉ. मधु से मुफ्त ऑनलाइन सलाह।">
+      The 10 day trial pack lets you <span class="exit-popup-highlight">feel the change in the first week</span>. And Dr. Madhu sees you free, online.
+    </p>
+    <div class="exit-popup-offerbox">
+      <div class="eo-top" data-hi="आज आपके ट्रायल में शामिल">Your trial today includes</div>
+      <div class="eo-main" data-hi="10 दिन का ट्रायल पैक + <span class='eo-free'>मुफ्त ऑनलाइन सलाह</span>">10 Day Trial Pack + a <span class="eo-free">FREE Online Consultation</span></div>
+    </div>
+    <p style="margin-top:16px;font-weight:600;color:var(--green-dark);" data-hi="यह ऑफर कल नहीं रहेगा।">This offer won't be here tomorrow.</p>
+    <button class="exit-popup-btn" onclick="acceptOfferAndScroll()" data-hi="हाँ, ट्रायल पैक दिखाइए →">Yes, Show Me The Trial Pack →</button>
+  </div>
+</div>
+
+<!-- TOP TRUST BAR -->
+<div class="top-bar">
+  <span>🌿 FSSAI Approved</span>
+  <span>✦ GMP Certified</span>
+  <span>✦ 100% Ayurvedic</span>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 1: HERO                              -->
+<!-- ============================================ -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-badge" data-hi="🔥 डॉ. मधु सूदन का नया फॉर्मूला | 1,14,000+ मरीज़">🔥 New From Dr. Madhu Sudan | 1,14,000+ Patients</div>
+    <h1 data-hi="पहले 30 दिन में 3 से 4 किलो कम। <span class='accent'>न भूखे रहना, न जिम।</span>">Lose 3 to 4 kg In Your First 30 Days. <span class="accent">No Starving. No Gym.</span></h1>
+    <p class="hero-sub" data-hi="आपका वज़न इसलिए नहीं रुका कि आपने कोशिश नहीं की। आपकी पाचन की आग धीमी हो गई है। अग्नि उसी को वापस जगाता है। सुबह और रात, पानी में कुछ बूँदें। बस।">Your weight is not stuck because you did not try. Your digestive fire has gone slow. Agni wakes it up again. A few drops in water, morning and night. That is all.</p>
+
+    <!-- HERO IMAGE SLIDER -->
+    <div class="hero-product-image" id="heroSlider">
+      <div class="hero-slides-track">
+        <img src="images/agni-bottle.svg" class="hero-slide active" alt="Agni Ayurvedic metabolism drops by Dr. Madhu Sudan">
+        <img src="images/agni-howto.svg" class="hero-slide" alt="How to take Agni drops">
+      </div>
+      <div class="hero-slider-dots">
+        <span class="hero-dot active" onclick="heroGoTo(0)"></span>
+        <span class="hero-dot" onclick="heroGoTo(1)"></span>
+      </div>
+    </div>
+
+    <button class="cta-primary" onclick="openModal('cta')" data-hi="👉 अभी ऑर्डर करें">👉 Order Now</button>
+
+    <div class="hero-trust">
+      <span data-hi="1,14,000+ मरीज़">1,14,000+ Patients</span>
+      <span data-hi="कोई साइड इफेक्ट नहीं">Zero Side Effects</span>
+      <span data-hi="सिर्फ ₹80 रोज़">Just ₹80 A Day</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 1.2: WHICH ONE IS YOU                -->
+<!-- ============================================ -->
+<section class="avatars reveal">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;" data-hi="इनमें से आप कौन हैं?">Which One Is You?</div>
+    <h2 class="section-title" style="text-align:center; margin-left:auto; margin-right:auto;" data-hi="तीन लोग। तीन कहानियाँ। <span class='accent'>एक ही वजह।</span>">Three People. Three Stories. <span class="accent">One Reason.</span></h2>
+    <p class="avatars-sub" data-hi="डॉ. मधु के क्लिनिक में हर दिन यही तीन आते हैं। अपनी कहानी ढूँढिए।">These three walk into Dr. Madhu's clinic every day. Find your story.</p>
+
+    <div class="avatars-grid">
+      <div class="avatar-card">
+        <div class="avatar-photo"><img src="images/avatar-rajesh.jpg" alt="Rajesh, 38" onerror="this.parentNode.classList.add('empty'); this.remove();"><span class="avatar-initial">R</span></div>
+        <div class="avatar-name">Rajesh, 38</div>
+        <div class="avatar-tag" data-hi="35 के बाद का पेट">The belly after 35</div>
+        <p data-hi="ऑफिस में पूरा दिन बैठना। चाय, नमकीन, देर रात खाना। पेट आया और गया नहीं। वॉक शुरू की, तीन हफ्ते में छूट गई।">"Sitting all day at the office. Tea, namkeen, late dinners. The belly came and never left. I started walking, and quit in three weeks."</p>
+        <div class="avatar-wound" data-hi="शर्ट का बटन अब बंद नहीं होता।">The shirt button does not close anymore.</div>
+      </div>
+      <div class="avatar-card">
+        <div class="avatar-photo"><img src="images/avatar-priya.jpg" alt="Priya, 32" onerror="this.parentNode.classList.add('empty'); this.remove();"><span class="avatar-initial">P</span></div>
+        <div class="avatar-name">Priya, 32</div>
+        <div class="avatar-tag" data-hi="बच्चे के बाद का वज़न">The weight after the baby</div>
+        <p data-hi="कुछ किलो गए, बाकी वहीं अटक गए। जिम का समय नहीं। घर चलाते हुए भूखी नहीं रह सकती।">"Some kilos went, the rest stayed. No time for a gym. I cannot starve while running a house."</p>
+        <div class="avatar-wound" data-hi="शादी के कपड़े अब भी अलमारी में रखे हैं।">The wedding clothes still sit in the cupboard.</div>
+      </div>
+      <div class="avatar-card">
+        <div class="avatar-photo"><img src="images/avatar-sunita.jpg" alt="Sunita, 45" onerror="this.parentNode.classList.add('empty'); this.remove();"><span class="avatar-initial">S</span></div>
+        <div class="avatar-name">Sunita, 45</div>
+        <div class="avatar-tag" data-hi="धीमा शरीर, सख्त पेट">The slow body, the hard stomach</div>
+        <p data-hi="कब्ज़, पेट फूलना, लंच के बाद थकान। कम खाने पर भी वज़न नहीं हिलता।">"Constipation, bloating, tired after lunch. The scale barely moves even when I eat less."</p>
+        <div class="avatar-wound" data-hi="कम खाना और फिर भी भारी लगना।">Eating less and still feeling heavy.</div>
+      </div>
+    </div>
+
+    <p class="avatars-punch" data-hi="तीनों की एक ही वजह है: पाचन की आग धीमी हो गई है। अग्नि उसी पर काम करता है।">All three have the same cause: the digestive fire has gone slow. Agni works on exactly that.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 1.5: TRUSTED BY BOLLYWOOD & BEYOND   -->
+<!-- ============================================ -->
+<section class="celebrity-section reveal">
+  <div class="celebrity-header">
+    <div class="celebrity-eyebrow">★ <span data-hi="14 साल की विरासत">A 14-Year Legacy</span></div>
+    <h2 data-hi="बॉलीवुड और उससे आगे <span class='accent'>भरोसा।</span>">Trusted By <span class="accent">Bollywood & Beyond.</span></h2>
+    <p class="celebrity-tagline" data-hi="बॉलीवुड सितारों से लेकर देश भर के प्रोफेशनल्स तक, डॉ. मधु पर उन हज़ारों लोगों ने भरोसा किया जो किसी को भी चुन सकते थे।">From Bollywood stars to leading professionals across India, Dr. Madhu's expertise has earned the trust of thousands who could choose anyone, anywhere.</p>
+  </div>
+
+  <div class="celebrity-marquee">
+    <div class="celebrity-track">
+      <div class="celebrity-photo"><img src="images/celeb-arbaaz-khan.jpg" alt="Dr. Madhu with celebrity"></div>
+      <div class="celebrity-photo"><img src="images/celeb-govinda.jpg" alt="Dr. Madhu with celebrity"></div>
+      <div class="celebrity-photo"><img src="images/celeb-juhi-chawla.jpg" alt="Dr. Madhu with celebrity"></div>
+      <div class="celebrity-photo"><img src="images/celeb-karishma-kapoor.jpg" alt="Dr. Madhu with celebrity"></div>
+      <div class="celebrity-photo"><img src="images/celeb-soha-ali-khan.jpg" alt="Dr. Madhu with celebrity"></div>
+      <div class="celebrity-photo"><img src="images/celeb-arbaaz-khan.jpg" alt="Dr. Madhu with celebrity"></div>
+      <div class="celebrity-photo"><img src="images/celeb-govinda.jpg" alt="Dr. Madhu with celebrity"></div>
+      <div class="celebrity-photo"><img src="images/celeb-juhi-chawla.jpg" alt="Dr. Madhu with celebrity"></div>
+      <div class="celebrity-photo"><img src="images/celeb-karishma-kapoor.jpg" alt="Dr. Madhu with celebrity"></div>
+      <div class="celebrity-photo"><img src="images/celeb-soha-ali-khan.jpg" alt="Dr. Madhu with celebrity"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 5: THE HERBS                         -->
+<!-- ============================================ -->
+<section class="herbs">
+  <div class="container reveal">
+    <div class="section-eyebrow" data-hi="फॉर्मूला">The Formula</div>
+    <h2 class="section-title" style="margin-left:auto; margin-right:auto;" data-hi="5 पुरानी जड़ी-बूटियाँ। एक बोतल। <span class='accent'>कोई केमिकल नहीं।</span>">5 Ancient Herbs. One Bottle. <span class="accent">No Chemicals.</span></h2>
+
+    <div class="why-box">
+      <h3 data-hi="नाम 'अग्नि' क्यों?">Why "Agni"?</h3>
+      <p data-hi="आयुर्वेद में <strong>अग्नि</strong> का मतलब है पाचन की आग। जब यह तेज़ होती है, खाना जलता है। जब धीमी होती है, खाना चर्बी बनकर जमता है, पेट फूलता है, कब्ज़ रहती है और सुबह से थकान लगती है। <strong>अग्नि ड्रॉप्स उसी आग को वापस जगाते हैं।</strong> वज़न, पेट, कब्ज़, थकान, एक ही बोतल।">
+        In Ayurveda, <strong>Agni</strong> means the digestive fire. When it burns well, food burns. When it goes slow, food turns to fat and sits, the stomach bloats, constipation comes, and you are tired from the morning. <strong>Agni drops wake that fire back up.</strong> Weight, belly, constipation, tiredness. One bottle.
+      </p>
+    </div>
+
+    <div class="herbs-grid">
+      <div class="herb-card">
+        <div class="herb-image"><img src="images/herb-garcinia.jpg" alt="Vrikshamla (Garcinia)"></div>
+        <h4>Vrikshamla</h4>
+        <p data-hi="भूख को शांत रखता है। चर्बी को जमने से रोकता है।">Keeps the hunger quiet. Stops fat from settling.</p>
+      </div>
+      <div class="herb-card">
+        <div class="herb-image"><img src="images/herb-triphala.jpg" alt="Triphala"></div>
+        <h4>Triphala</h4>
+        <p data-hi="पेट साफ़ करता है। कब्ज़ और फूलना खत्म।">Cleans the stomach. Ends constipation and bloating.</p>
+      </div>
+      <div class="herb-card">
+        <div class="herb-image"><img src="images/herb-guggul.jpg" alt="Guggul"></div>
+        <h4>Guggul</h4>
+        <p data-hi="जमी हुई चर्बी को गलाता है। कोलेस्ट्रॉल घटाता है।">Melts stored fat. Brings cholesterol down.</p>
+      </div>
+      <div class="herb-card">
+        <div class="herb-image"><img src="images/herb-trikatu.jpg" alt="Trikatu"></div>
+        <h4>Trikatu</h4>
+        <p data-hi="अदरक, काली मिर्च, पिप्पली। पाचन की आग तेज़ करता है।">Ginger, black pepper, long pepper. Turns the digestive fire up.</p>
+      </div>
+      <div class="herb-card">
+        <div class="herb-image"><img src="images/herb-amla.jpg" alt="Amla"></div>
+        <h4>Amla</h4>
+        <p data-hi="मेटाबॉलिज़्म तेज़। पूरा दिन एनर्जी।">Faster metabolism. Energy all day.</p>
+      </div>
+    </div>
+
+    <p class="herbs-tagline" data-hi="5,000 साल का आयुर्वेद। एक ड्रॉपर में।">5,000 years of Ayurveda. In one dropper.</p>
+
+    <div style="text-align:center; margin-top:36px;">
+      <button class="cta-primary" onclick="openModal('cta')" data-hi="👉 अभी ऑर्डर करें">👉 Order Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 7: PRICING                           -->
+<!-- ============================================ -->
+<section class="pricing" id="pricing">
+  <div class="container reveal">
+    <div class="section-eyebrow" data-hi="ऑफर">The Offer</div>
+    <h2 class="section-title" style="margin-left:auto; margin-right:auto;" data-hi="अपना पैक चुनिए। <span class='accent'>आज से शुरू कीजिए।</span>">Pick Your Pack. <span class="accent">Start Today.</span></h2>
+
+    <div class="pricing-intro">
+      <p data-hi="<strong>10 दिन का ट्रायल क्यों?</strong> बहुत लोग ऐसी दवाओं पर पैसा गँवा चुके हैं जो काम नहीं करतीं। इसलिए डॉ. मधु ने 10 दिन का पैक बनाया। <strong>10 दिन में आपको पता चल जाएगा</strong> कि अग्नि आप पर काम करता है या नहीं। पेट हल्का, सुबह साफ़, भूख शांत।">
+        <strong>Why a 10 day trial?</strong> Many people have wasted money on things that did not work. So Dr. Madhu made a 10 day pack. <strong>In 10 days you will know</strong> if Agni works for you. Lighter stomach, clear mornings, quiet hunger.
+      </p>
+      <p class="pricing-safe" data-hi="✓ <strong>पुरुष और महिलाएँ, 18 से 100 साल।</strong> डायबिटीज़, बीपी या थायरॉइड हो तब भी। कोई जुलाब नहीं। कोई केमिकल नहीं। शुद्ध आयुर्वेद।">
+        ✓ <strong>Men and women, 18 to 100.</strong> Fine with diabetes, BP and thyroid. No laxative. No chemicals. Pure Ayurveda.
+      </p>
+    </div>
+
+    <div class="pricing-grid two">
+      <div class="price-card">
+        <div class="price-icon">🌱</div>
+        <h3 data-hi="ट्रायल पैक">Trial Pack</h3>
+        <p class="pack-detail" data-hi="10 दिन · 1 बोतल">10 DAYS · 1 BOTTLE</p>
+        <div class="price-amount">₹900</div>
+        <div class="price-per-day" data-hi="₹90 रोज़">₹90 per day</div>
+        <p class="price-tagline" data-hi="&quot;पहले आज़माइए। पहले हफ्ते में फर्क देखिए।&quot;">"Test it first. Feel the change in the first week."</p>
+        <button class="cta-card" onclick="openModal('trial')" data-hi="ट्रायल पैक लीजिए →">Get Trial Pack →</button>
+      </div>
+
+      <div class="price-card featured">
+        <div class="discount-badge" data-hi="₹300 बचत">SAVE ₹300</div>
+        <span class="price-badge">⭐ <span data-hi="सबसे लोकप्रिय">Most Popular</span></span>
+        <div class="price-icon">🔥</div>
+        <h3 data-hi="मंथली पैक">Monthly Pack</h3>
+        <p class="pack-detail" data-hi="30 दिन · पूरा कोर्स">30 DAYS · THE FULL COURSE</p>
+        <div class="price-original">₹2,700</div>
+        <div class="price-amount">₹2,400</div>
+        <div class="price-discounted" data-hi="तीन ट्रायल पैक से ₹300 सस्ता">₹300 less than three trial packs</div>
+        <div class="price-per-day" data-hi="₹80 रोज़">₹80 per day</div>
+        <p class="price-tagline" data-hi="&quot;पूरे 30 दिन। यही वो महीना है जिसमें 3 से 4 किलो जाते हैं।&quot;">"The full 30 days. This is the month the 3 to 4 kg goes."</p>
+        <button class="cta-card" onclick="openModal('monthly')" data-hi="मंथली पैक शुरू करें →">Start Monthly Pack →</button>
+      </div>
+    </div>
+
+    <p class="pricing-recommendation" data-hi="💡 वज़न 30 दिन में जाता है, 10 में नहीं। पहली बार वालों के लिए मंथली पैक सही है।">💡 The weight goes in 30 days, not 10. We recommend the Monthly Pack for first-time users.</p>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div style="background: white; padding: 25px 20px; text-align: center; border-top: 1px solid #E8E8E8;">
+  <div class="risk-strip">
+    <div class="risk-item"><span class="emoji">🌿</span> <span data-hi="100% प्राकृतिक · कोई आदत नहीं · कोई जुलाब नहीं">100% natural · No habit-forming · No laxative</span></div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 7.4: BONUS STACK                     -->
+<!-- ============================================ -->
+<section class="bonus-section reveal">
+  <div class="bonus-container">
+    <div class="bonus-image bonus-image-cards">
+      <div class="bonus-card-visual">
+        <div class="bcv-icon">🩺</div>
+        <div class="bcv-title" data-hi="डॉ. मधु से ऑनलाइन सलाह">Online consult with Dr. Madhu</div>
+        <div class="bcv-sub" data-hi="आपका केस, आपका प्लान">Your case, your plan</div>
+      </div>
+      <div class="bonus-card-visual">
+        <div class="bcv-icon">🍽️</div>
+        <div class="bcv-title" data-hi="30 दिन का खाने का प्लान">The 30 Day Eating Plan</div>
+        <div class="bcv-sub" data-hi="क्या खाना है, कब खाना है">What to eat, when to eat</div>
+      </div>
+    </div>
+    <div class="bonus-content">
+      <div class="bonus-eyebrow" data-hi="आपको क्या-क्या मिलता है">Everything You Get</div>
+      <h2 data-hi="अग्नि खरीदिए। <span class='accent'>डॉक्टर और प्लान</span> मुफ्त पाइए।">Buy Agni. Get <span class="accent">the doctor and the plan</span> free.</h2>
+      <p class="bonus-sub" data-hi="बूँदें आग जगाती हैं। डॉक्टर और प्लान उसे जलाए रखते हैं। दोनों हर पैक के साथ, बिना किसी अतिरिक्त खर्च के।">The drops wake the fire. The doctor and the plan keep it burning. Both come with every pack at no extra cost.</p>
+      <ul class="bonus-stack-list">
+        <li><span class="bonus-item-name" data-hi="डॉ. मधु से मुफ्त ऑनलाइन सलाह<small>आपका वज़न, आपका पेट, आपकी आदतें। वो आपका प्लान बनाते हैं।</small>">Free Online Consultation with Dr. Madhu<small>Your weight, your stomach, your habits. He sets your plan.</small></span><span class="bonus-item-value">₹497</span></li>
+        <li><span class="bonus-item-name" data-hi="30 दिन का खाने का प्लान<small>क्या खाना है, कब खाना है, क्या छोड़ना है। भारतीय खाना, भूखे रहने की ज़रूरत नहीं।</small>">The 30 Day Eating Plan<small>What to eat, when, and what to skip. Indian food, no starving.</small></span><span class="bonus-item-value" data-hi="शामिल">Included</span></li>
+      </ul>
+      <div class="bonus-total">
+        <span class="t-label" data-hi="हर पैक के साथ">With every pack</span>
+        <span><span class="t-strike">₹497</span><span class="t-free" data-hi="मुफ्त">FREE</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 7.5: GUARANTEE                       -->
+<!-- ============================================ -->
+<section class="guarantee-section reveal">
+  <div class="guarantee-container">
+    <div class="g-grid">
+      <div class="g-seal-wrap">
+        <div class="g-seal">
+          <div class="g-ring"></div>
+          <div class="g-seal-inner">
+            <span class="g-num">30</span>
+            <span class="g-sub" data-hi="दिन का वादा">Day Promise</span>
+          </div>
+        </div>
+      </div>
+      <div class="g-content">
+        <div class="g-eyebrow" data-hi="हमारा वादा">Our Promise</div>
+        <h2 class="g-head" data-hi="पहले 30 दिन में 3 से 4 किलो कम। <span class='gh-accent'>या डॉ. मधु आपको फिर से देखते हैं, मुफ्त।</span>">Lose 3 to 4 kg in your first 30 days. <span class="gh-accent">Or Dr. Madhu sees you again, free.</span></h2>
+        <p class="g-lead" data-hi="न भूखे रहना। न जिम। न जुलाब। बूँदें लीजिए, प्लान पर चलिए, 30 दिन दीजिए। अगर वज़न नहीं गया, तो डॉ. मधु खुद आपका केस दोबारा देखेंगे और प्लान बदलेंगे। कोई सवाल नहीं।">No starving. No gym. No laxative. Take the drops, follow the plan, give it 30 days. If the weight has not gone, Dr. Madhu looks at your case again himself and changes your plan. No questions asked.</p>
+        <ul class="g-checks">
+          <li data-hi="30 दिन में 3 से 4 किलो, या मुफ्त फॉलो-अप सलाह">3 to 4 kg in 30 days, or a free follow-up consultation</li>
+          <li data-hi="100% आयुर्वेदिक, कोई आदत नहीं, कोई साइड इफेक्ट नहीं">100% Ayurvedic, no habit-forming, zero side effects</li>
+          <li data-hi="डायबिटीज़, बीपी और थायरॉइड के साथ सुरक्षित · 18 से 100 साल">Safe with diabetes, BP and thyroid · ages 18 to 100</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 10: TESTIMONIALS (CAROUSEL)          -->
+<!-- SAMPLE CARDS. Every card below is a placeholder written by Wiseman on 5 Sep 2026. -->
+<!-- The page does NOT go live until the seven real patient words from Dr. Madhu replace them. -->
+<!-- ============================================ -->
+<section class="testimonials" style="padding: 80px 20px; background: white;">
+  <div class="container reveal" style="max-width: 1000px;">
+    <div class="section-eyebrow" style="text-align: center;" data-hi="असली नतीजे">REAL RESULTS</div>
+    <h2 class="section-title" style="text-align:center; margin-left:auto; margin-right:auto; margin-bottom: 60px;" data-hi="हमारे मरीज़ क्या कहते हैं">What Our Patients Say</h2>
+
+    <div class="testimonial-carousel-wrapper">
+      <div class="testimonial-carousel" id="testimonialCarousel">
+        <div class="testimonial-slide"><div class="t-card"><span class="t-sample">SAMPLE</span><div class="t-wound">Belly after 35</div><p class="t-text">"4 kg in the first month. My belt is two holes in. I did not change my office lunch, I only stopped the 4pm namkeen because I was not hungry."</p><div class="t-meta"><span class="t-name">Rajesh K.</span><span class="t-city">Kalkaji, Delhi</span><span class="t-kg">-4 kg · 30 days</span></div></div></div>
+        <div class="testimonial-slide"><div class="t-card"><span class="t-sample">SAMPLE</span><div class="t-wound">Weight after the baby</div><p class="t-text">"Two years stuck at the same weight. 3 kg gone in five weeks and I ate rice every day. The eating plan is normal home food, that is why it worked."</p><div class="t-meta"><span class="t-name">Priya S.</span><span class="t-city">Gurgaon</span><span class="t-kg">-3 kg · 5 weeks</span></div></div></div>
+        <div class="testimonial-slide"><div class="t-card"><span class="t-sample">SAMPLE</span><div class="t-wound">Constipation</div><p class="t-text">"The weight was second. The first thing that changed was my mornings. Clear stomach by day four. Then the bloating went, then the scale started moving."</p><div class="t-meta"><span class="t-name">Sunita M.</span><span class="t-city">Noida</span><span class="t-kg">-3.5 kg · 30 days</span></div></div></div>
+        <div class="testimonial-slide"><div class="t-card"><span class="t-sample">SAMPLE</span><div class="t-wound">Tried everything</div><p class="t-text">"Keto, gym, a fat burner from Instagram. All of it came back. This is the first time the weight went and stayed. 6 kg in two months, no hunger."</p><div class="t-meta"><span class="t-name">Amit R.</span><span class="t-city">Faridabad</span><span class="t-kg">-6 kg · 60 days</span></div></div></div>
+        <div class="testimonial-slide"><div class="t-card"><span class="t-sample">SAMPLE</span><div class="t-wound">Diabetes</div><p class="t-text">"I was scared to take anything with my sugar. Dr. Madhu looked at my reports on the call first. Sugar is steady, 3 kg down, and I sleep better."</p><div class="t-meta"><span class="t-name">Ramesh G.</span><span class="t-city">Ghaziabad</span><span class="t-kg">-3 kg · 30 days</span></div></div></div>
+        <div class="testimonial-slide"><div class="t-card"><span class="t-sample">SAMPLE</span><div class="t-wound">Tired all day</div><p class="t-text">"I did not buy it for energy but that came first. No 3pm crash. By week three my kurta fit differently. 4 kg by the end of the month."</p><div class="t-meta"><span class="t-name">Neha T.</span><span class="t-city">Dwarka, Delhi</span><span class="t-kg">-4 kg · 30 days</span></div></div></div>
+        <div class="testimonial-slide"><div class="t-card"><span class="t-sample">SAMPLE</span><div class="t-wound">Over 50</div><p class="t-text">"At 54 I thought this was just my body now. 3 kg in the first month, knees hurt less on the stairs. The drops are easy, I take them with my morning water."</p><div class="t-meta"><span class="t-name">Suresh P.</span><span class="t-city">Gurgaon</span><span class="t-kg">-3 kg · 30 days</span></div></div></div>
+      </div>
+
+      <button class="carousel-arrow carousel-prev" onclick="testimonialCarousel.prev()">&#10094;</button>
+      <button class="carousel-arrow carousel-next" onclick="testimonialCarousel.next()">&#10095;</button>
+
+      <div class="carousel-dots">
+        <span class="dot" onclick="testimonialCarousel.goTo(0)"></span>
+        <span class="dot" onclick="testimonialCarousel.goTo(1)"></span>
+        <span class="dot" onclick="testimonialCarousel.goTo(2)"></span>
+        <span class="dot" onclick="testimonialCarousel.goTo(3)"></span>
+        <span class="dot" onclick="testimonialCarousel.goTo(4)"></span>
+        <span class="dot" onclick="testimonialCarousel.goTo(5)"></span>
+        <span class="dot" onclick="testimonialCarousel.goTo(6)"></span>
+      </div>
+    </div>
+    <p class="t-disclaimer" data-hi="नतीजे हर व्यक्ति में अलग होते हैं।">Results vary from person to person.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 6: AUTHORITY, DR. MADHU              -->
+<!-- ============================================ -->
+<section class="authority">
+  <div class="container reveal">
+    <div class="authority-grid">
+      <div class="authority-photo"><img src="images/dr-madhu-authority.jpg" alt="Dr. Madhu Sudan, Ayurvedic doctor" style="width:100%; height:100%; object-fit:cover; border-radius:20px;"></div>
+      <div class="authority-content">
+        <div class="section-eyebrow" data-hi="डॉक्टर">The Doctor</div>
+        <h2 data-hi="बनाया है उस डॉक्टर ने जिसने <span class='accent'>1,14,000 मरीज़ देखे हैं।</span>">Made By The Doctor Who Has Seen <span class="accent">1,14,000 Patients.</span></h2>
+        <ul class="authority-bio">
+          <li data-hi="14+ साल की क्लिनिकल प्रैक्टिस">14+ years of clinical practice</li>
+          <li data-hi="1,14,000+ मरीज़ों का इलाज">1,14,000+ patients treated</li>
+          <li data-hi="दो क्लिनिक: कालकाजी और गुड़गाँव">Two clinics: Kalkaji & Gurgaon</li>
+          <li data-hi="कामदेव मोदक के निर्माता, जो हज़ारों घरों में है">Maker of Kamdev Modak, now in thousands of homes</li>
+        </ul>
+        <blockquote class="authority-quote">
+          <span data-hi="&quot;मेरे क्लिनिक में वज़न वाले मरीज़ भूखे रहकर आते हैं और फिर भी भारी होते हैं। गलती खाने में नहीं, आग में है। अग्नि से मेरे ज़्यादातर मरीज़ पहले महीने में 3 से 4 किलो कम करते हैं, और वो अपना खाना खाते हुए।&quot;">"In my clinic, weight patients come in starving and still heavy. The fault is not the food, it is the fire. With Agni, most of my patients lose 3 to 4 kg in the first month, eating their own food."</span>
+          <span class="authority-quote-author">— Dr. Madhu Sudan</span>
+        </blockquote>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+      <button class="cta-primary" onclick="openModal('cta')" data-hi="👉 मेरा 30 दिन शुरू करें">👉 Start My 30 Days</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 6.6: DR MADHU REEL                   -->
+<!-- STAND-IN: the Modak reel plays here until Dr. Madhu records the Agni one. -->
+<!-- ============================================ -->
+<section class="reel-section reveal">
+  <div class="reel-eyebrow" data-hi="उनके अपने शब्दों में">In His Own Words</div>
+  <h2 class="reel-head" data-hi="डॉ. मधु से सुनिए <span class='accent'>अग्नि के बारे में</span>">Hear Dr. Madhu explain <span class="accent">Agni</span></h2>
+  <p class="reel-sub" data-hi="कोई मार्केटिंग नहीं। सिर्फ डॉक्टर, यह बताते हुए कि क्या काम करता है, क्या नहीं, और यह फॉर्मूला क्यों बनाया।">No marketing talk. Just the doctor himself, on what works, what does not, and why he made this formula.</p>
+  <div class="reel-frame">
+    <video controls playsinline preload="metadata" poster="images/dr-madhu-quote.jpg">
+      <source src="https://res.cloudinary.com/dvcmkibgp/video/upload/v1778944482/modak-reel_iay0wi.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="reel-caption">▶ <span data-hi="वज़न के बारे में सच">The truth about weight</span></div>
+
+  <div style="text-align:center; margin-top:36px;">
+    <button class="cta-primary" onclick="openModal('cta')" data-hi="👉 मेरा अग्नि ऑर्डर करें">👉 Order My Agni</button>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 7.6: ORIGIN STORY                    -->
+<!-- ============================================ -->
+<section class="origin-story reveal">
+  <div class="story-container">
+    <div class="story-portrait"><img src="images/dr-madhu-quote.jpg" alt="Dr. Madhu Sudan"></div>
+    <div class="story-eyebrow" data-hi="शुरुआत">The Origin</div>
+    <h2 class="story-head" data-hi="<span class='accent'>अग्नि</span> कैसे बना">How <span class="accent">Agni</span> Was Born</h2>
+    <p class="story-text" data-hi="डॉ. मधु ने वज़न की दवा बनाने की योजना नहीं बनाई थी। 14 साल तक उनके मरीज़ दूसरी परेशानियों के लिए आए, और लगभग हर एक के पास एक ही दूसरी शिकायत थी। पेट। कब्ज़। थकान। और वज़न जो कुछ भी करने पर नहीं हिलता।">Dr. Madhu did not set out to make a weight product. For 14 years his patients came for other things, and almost every one of them carried the same second complaint. The belly. The constipation. The tiredness. The weight that would not move whatever they did.</p>
+    <p class="story-text" data-hi="कुछ ने डाइट की। वज़न गया और वापस आ गया। कुछ ने इंस्टाग्राम वाली गोलियाँ लीं। दिल की धड़कन बढ़ी, नींद गई। कुछ ने बस मान लिया कि उनका शरीर अब ऐसा ही है।">Some dieted. The weight went and came back. Some took pills from Instagram. Their heart raced and their sleep went. Some just decided this was their body now.</p>
+    <div class="story-highlight"><span data-hi="&quot;मैंने देखा कि वो सब एक ही चीज़ खो रहे थे: पाचन की आग। कोई भी डाइट धीमी आग को ठीक नहीं करती। इसलिए मैं पुरानी किताबों में गया और वो जड़ी-बूटियाँ खोजीं जो आग को वापस जगाती हैं, बिना जुलाब, बिना नुकसान। उसे बूँदों में बनाया ताकि कोई भी ले सके।&quot;">"I saw they were all losing the same thing: the digestive fire. No diet fixes a slow fire. So I went back to the old texts and found the herbs that wake it up, without a laxative, without harm. I made it as drops so anyone can take it."</span><br><br><strong>— Dr. Madhu Sudan</strong></div>
+    <p class="story-text" data-hi="वह फॉर्मूला <strong>अग्नि</strong> है। नाम आग के लिए है, क्योंकि यही वो चीज़ है जो यह वापस लाता है।">That formula is <strong>Agni</strong>. Named for the fire, because that is what it gives back.</p>
+    <div class="story-cta">
+      <a href="#pricing" class="cta-primary" data-hi="अपना 30 दिन शुरू करें →">Start Your 30 Days →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 3: THE COMPARISON                    -->
+<!-- ============================================ -->
+<section class="comparison">
+  <div class="container reveal">
+    <div class="section-eyebrow" data-hi="तुलना">The Comparison</div>
+    <h2 class="section-title" style="margin-left:auto; margin-right:auto;" data-hi="आपने जो भी आज़माया, उसने वज़न घटाकर <span class='accent'>वापस क्यों ला दिया।</span>">Why Everything You Tried Lost The Weight <span class="accent">And Gave It Back.</span></h2>
+
+    <div class="comparison-quote-card-wrap">
+      <div class="comparison-quote-card">
+        <div class="cqc-text">
+          <div class="cqc-mark">"</div>
+          <p data-hi="डाइट, जिम, गोली, इंजेक्शन। सब वज़न पर काम करते हैं। कोई भी आग पर काम नहीं करता। इसलिए जैसे ही आप रुकते हैं, वज़न वापस आ जाता है। अग्नि वजह पर काम करता है।">Diet, gym, pills, injections. They all work on the weight. None of them works on the fire. So the moment you stop, the weight comes back. Agni works on the cause.</p>
+          <div class="cqc-author">
+            <div class="cqc-name">— Dr. Madhu Sudan</div>
+            <div class="cqc-role" data-hi="आयुर्वेदिक डॉक्टर · 14+ साल">Ayurvedic Doctor · 14+ Years of Practice</div>
+          </div>
+        </div>
+        <div class="cqc-photo"><img src="images/dr-madhu-quote.jpg" alt="Dr. Madhu Sudan"></div>
+      </div>
+    </div>
+
+    <div class="comparison-table four">
+      <div class="comparison-col bad">
+        <div class="comparison-header" data-hi="क्रैश डाइट">Crash Diet<br><small>(keto, fasting, salad)</small></div>
+        <ul class="comparison-list">
+          <li><span class="icon">✗</span> <span data-hi="पूरा दिन भूख">Hungry all day</span></li>
+          <li><span class="icon">✗</span> <span data-hi="रुकते ही वज़न वापस">Weight returns when you stop</span></li>
+          <li><span class="icon">✗</span> <span data-hi="घर का खाना छोड़ना पड़ता है">You give up home food</span></li>
+          <li><span class="icon">✗</span> <span data-hi="कमज़ोरी, चिड़चिड़ापन">Weakness, bad mood</span></li>
+        </ul>
+      </div>
+      <div class="comparison-col bad">
+        <div class="comparison-header" data-hi="जिम">Gym<br><small>(and the trainer)</small></div>
+        <ul class="comparison-list">
+          <li><span class="icon">✗</span> <span data-hi="रोज़ 1 घंटा जो आपके पास नहीं है">1 hour a day you do not have</span></li>
+          <li><span class="icon">✗</span> <span data-hi="ज़्यादातर 3 हफ्ते में छोड़ देते हैं">Most quit in 3 weeks</span></li>
+          <li><span class="icon">✗</span> <span data-hi="₹2,000 से ₹5,000 महीना">₹2,000 to ₹5,000 a month</span></li>
+          <li><span class="icon">✗</span> <span data-hi="पेट फिर भी वहीं रहता है">The belly stays anyway</span></li>
+        </ul>
+      </div>
+      <div class="comparison-col bad">
+        <div class="comparison-header" data-hi="गोलियाँ और इंजेक्शन">Pills & Injections<br><small>(fat burners, weight loss shots)</small></div>
+        <ul class="comparison-list">
+          <li><span class="icon">✗</span> <span data-hi="जी मिचलाना, धड़कन, नींद खराब">Nausea, racing heart, lost sleep</span></li>
+          <li><span class="icon">✗</span> <span data-hi="इंजेक्शन ₹10,000+ महीना">Injections ₹10,000+ a month</span></li>
+          <li><span class="icon">✗</span> <span data-hi="बंद करते ही वज़न वापस">Stop it and the weight returns</span></li>
+          <li><span class="icon">✗</span> <span data-hi="शरीर पर बोझ">A load on the body</span></li>
+        </ul>
+      </div>
+      <div class="comparison-col good">
+        <div class="comparison-header">Agni<br><small data-hi="(100% आयुर्वेदिक)">(100% Ayurvedic)</small></div>
+        <ul class="comparison-list">
+          <li><span class="icon">✓</span> <span data-hi="भूख शांत, आप भरे रहते हैं">Hunger quiet, you stay full</span></li>
+          <li><span class="icon">✓</span> <span data-hi="वजह पर काम, इसलिए वज़न टिकता है">Works on the cause, so it stays off</span></li>
+          <li><span class="icon">✓</span> <span data-hi="अपना खाना खाइए">Eat your own food</span></li>
+          <li><span class="icon">✓</span> <span data-hi="₹80 रोज़, कोई साइड इफेक्ट नहीं">₹80 a day, zero side effects</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="comparison-quote" data-hi="&quot;बाकी सब वज़न से लड़ते हैं। अग्नि आग जलाता है।&quot;">"The others fight the weight. Agni lights the fire."</p>
+    <button class="cta-mini" onclick="document.getElementById('timeline-section').scrollIntoView({behavior:'smooth'})" data-hi="देखिए अग्नि कैसे काम करता है ↓">See How Agni Works ↓</button>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 4: HOW IT WORKS (30 day timeline)    -->
+<!-- ============================================ -->
+<section class="timeline" id="timeline-section">
+  <div class="container reveal">
+    <div class="section-eyebrow" data-hi="बदलाव">The Change</div>
+    <h2 class="section-title" style="margin-left:auto; margin-right:auto;" data-hi="जब आप रोज़ अग्नि लेते हैं तो <span class='accent'>क्या होता है।</span>">What Happens When You Take <span class="accent">Agni Every Day.</span></h2>
+
+    <div class="timeline-grid">
+      <div class="timeline-card">
+        <span class="stage" data-hi="दिन 1 से 4">Day 1 – 4</span>
+        <h3 data-hi="पेट साफ़">The Stomach Clears</h3>
+        <p data-hi="सुबह साफ़ होती है। फूलना कम। शरीर हल्का लगता है।">Mornings become clear. Bloating drops. The body feels lighter.</p>
+      </div>
+      <div class="timeline-card">
+        <span class="stage" data-hi="हफ्ता 1 से 2">Week 1 – 2</span>
+        <h3 data-hi="भूख शांत">The Hunger Quiets</h3>
+        <p data-hi="शाम की भूख गायब। आप कम खाते हैं बिना कोशिश किए।">The evening cravings go. You eat less without trying.</p>
+      </div>
+      <div class="timeline-card">
+        <span class="stage" data-hi="हफ्ता 3 से 4">Week 3 – 4</span>
+        <h3 data-hi="कपड़े ढीले">The Clothes Loosen</h3>
+        <p data-hi="बेल्ट एक छेद अंदर। तराज़ू 3 से 4 किलो नीचे।">The belt goes in a hole. The scale shows 3 to 4 kg less.</p>
+      </div>
+      <div class="timeline-card">
+        <span class="stage" data-hi="महीना 2 से 3">Month 2 – 3</span>
+        <h3 data-hi="नया आम दिन">The New Normal</h3>
+        <p data-hi="आग जलती रहती है। वज़न जाता रहता है और वापस नहीं आता।">The fire stays lit. The weight keeps going and does not come back.</p>
+      </div>
+    </div>
+
+    <p class="timeline-caption" data-hi="पहला बदलाव आप पेट में महसूस करते हैं, तराज़ू पर नहीं। इसलिए 10 दिन का ट्रायल पैक काफी है यह जानने के लिए कि यह आप पर काम कर रहा है।">The first change you feel is in the stomach, not on the scale. That is why the 10 day trial is enough to know it is working on you.</p>
+
+    <div style="text-align: center; margin-top: 60px; display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin-left: auto; margin-right: auto;">
+      <button class="cta-primary" style="padding: 18px 40px; font-size: 16px; font-weight: 700;" onclick="openModal('cta')" data-hi="✓ हाँ, मैं तैयार हूँ। अभी शुरू करें →">✓ Yes, I'm Ready. Start Now →</button>
+      <button class="cta-ghost" onclick="document.querySelector('.testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });" data-hi="पहले दूसरों के नतीजे दिखाइए">Show me other people's results first</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 2: THE TRUTH                         -->
+<!-- ============================================ -->
+<section class="problem">
+  <div class="container reveal">
+    <div class="section-eyebrow" data-hi="सच">The Truth</div>
+    <h2 class="section-title" data-hi="अगर आप यहाँ तक पढ़ रहे हैं, तो आप पहले से <span class='accent'>जानते हैं।</span>">If You're Reading This, You Already <span class="accent">Know.</span></h2>
+    <ul class="problem-list">
+      <li data-hi="आप फोटो में सबसे पीछे खड़े होते हैं।">You stand at the back in photos.</li>
+      <li data-hi="सीढ़ियाँ चढ़ने पर साँस फूलती है, और आप छुपाते हैं।">Stairs leave you out of breath, and you hide it.</li>
+      <li data-hi="कम खाया, फिर भी वज़न वहीं का वहीं।">You ate less, and the scale did not move.</li>
+      <li data-hi="कब्ज़ और फूलना अब आम बात लगने लगी है।">Constipation and bloating have started to feel normal.</li>
+      <li data-hi="आपने खुद से कहा, इस बार पक्का। तीन बार।">You told yourself, this time for sure. Three times.</li>
+    </ul>
+    <p class="problem-punch" data-hi="कोशिश की कमी नहीं थी। आग की कमी थी।">It was never a lack of trying. It was a lack of fire.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 8: FAQ                               -->
+<!-- ============================================ -->
+<section class="faq">
+  <div class="container reveal">
+    <div class="section-eyebrow" data-hi="आपके सवाल">Your Questions</div>
+    <h2 class="section-title" style="text-align:center; margin-left:auto; margin-right:auto;" data-hi="जो कुछ आप जानना चाहते हैं।">Everything You Need To Know.</h2>
+
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="कितनी जल्दी नतीजा दिखेगा?">How fast will I see results?</div>
+        <div class="faq-answer" data-hi="पहला बदलाव पेट में आता है, 4 से 7 दिन में। पेट साफ़, फूलना कम, भूख शांत। तराज़ू 3 से 4 हफ्ते में हिलता है। ज़्यादातर मरीज़ पहले 30 दिन में 3 से 4 किलो कम करते हैं। हमारा वादा: 30 दिन में वज़न नहीं गया तो डॉ. मधु से मुफ्त फॉलो-अप।">The first change is in the stomach, in 4 to 7 days. Clear mornings, less bloating, quieter hunger. The scale moves in week 3 to 4. Most patients lose 3 to 4 kg in the first 30 days. Our promise: if the weight has not gone in 30 days, a free follow-up with Dr. Madhu.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="अग्नि कैसे लेना है?">How do I take Agni?</div>
+        <div class="faq-answer" data-hi="एक ड्रॉपर आधे गिलास गुनगुने पानी में। दिन में दो बार, नाश्ते के बाद और रात के खाने के बाद। रोज़। न कोई खास डाइट, न कोई जुलाब।">One dropper in half a glass of warm water. Twice a day, after breakfast and after dinner. Every day. No special diet, no laxative.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="कोई साइड इफेक्ट?">Are there any side effects?</div>
+        <div class="faq-answer" data-hi="नहीं। अग्नि 100% आयुर्वेदिक जड़ी-बूटियों से बना है। इसमें कोई जुलाब नहीं है, इसलिए यह पेट को कमज़ोर नहीं करता। कोई आदत नहीं, कोई केमिकल नहीं।">None. Agni is made from 100% Ayurvedic herbs. It has no laxative in it, so it does not weaken the stomach. No dependency, no chemicals.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="क्या मुझे डाइट करनी पड़ेगी?">Do I have to diet?</div>
+        <div class="faq-answer" data-hi="नहीं। आप अपना घर का खाना खाते हैं। हर पैक के साथ 30 दिन का खाने का प्लान आता है जो बताता है क्या खाना है और कब। भारतीय खाना, भूखे रहने की ज़रूरत नहीं।">No. You eat your own home food. Every pack comes with the 30 Day Eating Plan that tells you what to eat and when. Indian food, no starving.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="डायबिटीज़, बीपी या थायरॉइड के साथ सुरक्षित है?">Is it safe with diabetes, BP or thyroid?</div>
+        <div class="faq-answer" data-hi="हाँ। और हर खरीद के साथ डॉ. मधु से <strong>मुफ्त ऑनलाइन सलाह</strong> आती है, तो आप शुरू करने से पहले अपनी रिपोर्ट और दवाएँ उनसे सीधे बता सकते हैं।">Yes. And every purchase includes a <strong>free online consultation with Dr. Madhu</strong>, so you can tell him your reports and your medicines directly before you start.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="अगर मुझ पर काम न करे तो?">What if it does not work for me?</div>
+        <div class="faq-answer" data-hi="30 दिन में 3 से 4 किलो नहीं गए तो डॉ. मधु आपका केस खुद दोबारा देखेंगे और प्लान बदलेंगे, मुफ्त। आप अकेले नहीं हैं।">If you have not lost 3 to 4 kg in 30 days, Dr. Madhu looks at your case again himself and changes your plan, free. You are never on your own.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="कौन ले सकता है?">Who can take it?</div>
+        <div class="faq-answer" data-hi="पुरुष और महिलाएँ, <strong>18 से 100 साल</strong>। डॉ. मधु ने इसे हर उम्र के मरीज़ों को दिया है।">Men and women, <strong>18 to 100 years old</strong>. Dr. Madhu has given it to patients of every age.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="नाम 'अग्नि' क्यों?">Why is it called "Agni"?</div>
+        <div class="faq-answer" data-hi="आयुर्वेद में अग्नि पाचन की आग है। जब वो तेज़ होती है खाना जलता है, जब धीमी होती है खाना चर्बी बनता है। बूँदें उसी आग को वापस जगाती हैं। इसलिए यह नाम।">In Ayurveda, Agni is the digestive fire. When it burns well, food burns. When it goes slow, food turns to fat. The drops wake that fire back up. So, the name.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="वज़न के अलावा और क्या ठीक होता है?">What else does it help with, apart from weight?</div>
+        <div class="faq-answer" data-hi="कब्ज़, पेट फूलना, खाने के बाद भारीपन, दोपहर की थकान। ये सब एक ही धीमी आग से आते हैं, और एक साथ ठीक होते हैं।">Constipation, bloating, heaviness after meals, the afternoon tiredness. They all come from the same slow fire, and they go together.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question" data-hi="डिलीवरी कितने दिन में?">How long is delivery?</div>
+        <div class="faq-answer" data-hi="पूरे भारत में 3 से 5 दिन। ऑर्डर के 24 घंटे के अंदर डॉ. मधु की टीम आपको फोन करके डिलीवरी पक्की करती है और आपकी ऑनलाइन सलाह का समय तय करती है।">3 to 5 days anywhere in India. Within 24 hours of your order, Dr. Madhu's team calls to confirm delivery and fix the time for your online consultation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 9: FINAL CTA                         -->
+<!-- ============================================ -->
+<section class="final-cta">
+  <div class="container">
+    <h2 data-hi="आपने काफी पढ़ लिया। <span class='accent'>अब फैसला कीजिए।</span>">You've Read Enough. <span class="accent">Now Decide.</span></h2>
+    <p class="final-cta-sub" data-hi="30 दिन बाद आप या तो 3 से 4 किलो हल्के होंगे, या फिर वही आदमी जो इसके बारे में पढ़ रहा था।">30 days from now you will either be 3 to 4 kg lighter, or still the person reading about it.</p>
+
+    <div style="text-align:center; margin-bottom:40px; margin-top:30px;">
+      <img src="images/agni-bottle.svg" alt="Agni drops" style="width:100%; max-width:360px; border-radius:20px; box-shadow: 0 12px 32px rgba(217,154,30,0.3);">
+    </div>
+
+    <button class="cta-primary" onclick="openModal('cta')" data-hi="👉 मेरा 30 दिन शुरू करें">👉 Start My 30 Days</button>
+    <div class="urgency-strip">
+      <span>⚡ <span data-hi="ट्रायल पैक सीमित">Trial pack stock limited</span></span>
+      <span>🔒 <span data-hi="100% सुरक्षित पेमेंट">100% secure checkout</span></span>
+      <span>🚚 <span data-hi="पूरे भारत में तेज़ डिलीवरी">Fast delivery across India</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER                                       -->
+<!-- ============================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-mfr">Formulated by Dr. Madhu Sudan.</div>
+    <div class="footer-disclaimer">
+      This product is a Health Supplement and is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Not recommended for children, pregnant, or lactating women. Consult your healthcare provider before use if you have underlying health conditions. Store in a cool, dry place away from sunlight.
+    </div>
+    <div class="footer-disclaimer">
+      DISCLAIMER: Results are not typical. Individual results may vary. This site is not a part of the Facebook website, Google Ads, Facebook Inc., Meta Inc., or Google Inc. Additionally, this site is NOT endorsed by Facebook or Google in any way. FACEBOOK is a trademark of Meta Inc. Google Ads is a trademark of Google Inc.
+    </div>
+    <div class="footer-links">
+      <a href="https://consult.drmadhusudan.com/contact">Contact Us</a>
+      <a href="https://consult.drmadhusudan.com/terms">Terms of Use</a>
+      <a href="https://consult.drmadhusudan.com/refund-policy">Refund Policy</a>
+    </div>
+    <div class="footer-copy">© 2026 Agni · Dr. Madhu Sudan · All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- STICKY FOOTER -->
+<div class="mdk-sticky-footer">
+  <div class="mdk-sticky-left">
+    <div class="mdk-sticky-tagline" data-hi="आग जगाइए। वज़न जाने दीजिए।">Light the fire. Let the weight go.</div>
+    <div class="mdk-sticky-price" data-hi="10 दिन का ट्रायल सिर्फ <b>₹900</b> · महीना <b>₹2,400</b>">10 day trial just <b>₹900</b> · a month <b>₹2,400</b></div>
+  </div>
+  <button class="mdk-sticky-btn" onclick="openModal('cta')" data-hi="ऑर्डर करें →">Order Now →</button>
+</div>
+
+<!-- ============================================ -->
+<!-- MODAL, LEAD FORM BEFORE PAYMENT              -->
+<!-- ============================================ -->
+<div class="modal-overlay" id="leadModal" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h3 data-hi="आप अपने 30 दिन से एक कदम दूर हैं।">You're One Step Away From Your 30 Days.</h3>
+    <p style="margin-bottom: 20px;" data-hi="नीचे अपनी जानकारी भरिए। <strong>डॉ. मधु की टीम 24 घंटे में फोन करेगी</strong> डिलीवरी पक्की करने और आपकी <strong>मुफ्त ऑनलाइन सलाह</strong> का समय तय करने के लिए।">Enter your details below. <strong>Dr. Madhu's team will call within 24 hours</strong> to confirm delivery and fix the time for your <strong>FREE online consultation</strong>.</p>
+
+    <div class="pack-options" id="packOptions">
+      <div class="pack-opt" data-pack="trial" onclick="selectPack('trial')">
+        <div class="pack-opt-left">
+          <span class="pack-radio"></span>
+          <div>
+            <div class="pack-opt-name" data-hi="ट्रायल पैक">Trial Pack</div>
+            <div class="pack-opt-sub" data-hi="10 दिन · 1 बोतल">10 days · 1 bottle</div>
+          </div>
+        </div>
+        <div class="pack-opt-price">₹900</div>
+      </div>
+      <div class="pack-opt selected" data-pack="monthly" onclick="selectPack('monthly')">
+        <span class="pack-opt-badge" data-hi="सबसे लोकप्रिय">MOST POPULAR</span>
+        <div class="pack-opt-left">
+          <span class="pack-radio"></span>
+          <div>
+            <div class="pack-opt-name" data-hi="मंथली पैक">Monthly Pack</div>
+            <div class="pack-opt-sub" data-hi="30 दिन · पूरा कोर्स">30 days · the full course</div>
+          </div>
+        </div>
+        <div class="pack-opt-price">₹2,400</div>
+      </div>
+    </div>
+
+    <form id="leadForm" onsubmit="handleFormSubmit(event)" method="post">
+      <div class="form-group">
+        <input class="formkit-input" type="email" name="email_address" placeholder="Email Address" required>
+      </div>
+      <div class="form-group">
+        <input class="formkit-input" type="text" name="fields[first_name]" placeholder="First Name" required>
+      </div>
+      <div class="form-group">
+        <input class="formkit-input" type="tel" name="fields[phone_number]" placeholder="Phone Number" required>
+      </div>
+      <button type="submit" class="form-submit" data-hi="✓ पक्का करें और पेमेंट पर जाएँ →">✓ Confirm & Continue To Checkout →</button>
+    </form>
+
+    <div class="modal-trust-list">
+      <p>
+        ✓ <span data-hi="डॉ. मधु से मुफ्त ऑनलाइन सलाह शामिल">FREE online consultation with Dr. Madhu included</span><br>
+        ✓ <span data-hi="100% आयुर्वेदिक · कोई साइड इफेक्ट नहीं · FSSAI">100% Ayurvedic · Zero Side Effects · FSSAI Approved</span><br>
+        ✓ <span data-hi="3 से 5 दिन में डिलीवरी">Delivery in 3 to 5 days</span>
+      </p>
+    </div>
+
+    <p class="modal-trust">🔒 <span data-hi="आपकी जानकारी 100% गोपनीय है।">Your details are 100% confidential and never shared.</span></p>
+  </div>
+</div>

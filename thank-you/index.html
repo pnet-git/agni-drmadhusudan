@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed - Agni Drops</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '921929390306325');
+  fbq('track', 'PageView');
+
+  // Purchase event. Cashfree passed amount and pack in the URL. Razorpay payment
+  // pages do not, so we fall back to the pack we saved in this browser just
+  // before sending the buyer to pay. Without a value, Meta cannot tell a
+  // Rs 1,490 trial from a Rs 15,000 quarterly, which is what it optimises on.
+  (function() {
+    var PACK_PRICE = { trial: 900, monthly: 2400 };
+    var params = new URLSearchParams(window.location.search);
+    var amount = params.get('amount') || params.get('amt') || params.get('value') || params.get('price');
+    var pack   = params.get('pack') || params.get('plan') || params.get('product');
+
+    if (!pack) { try { pack = localStorage.getItem('agniPack'); } catch (e) {} }
+    if (!amount && pack && PACK_PRICE[pack]) amount = PACK_PRICE[pack];
+
+    var data = { currency: 'INR' };
+    if (amount) {
+      var v = parseFloat(String(amount).replace(/[^0-9.]/g, ''));
+      if (!isNaN(v) && v > 0) data.value = v;
+    }
+    if (pack) data.content_name = pack;
+    fbq('track', 'Purchase', data);
+
+    // one sale, one event: do not fire again if he refreshes the page
+    try { localStorage.removeItem('selectedPack'); } catch (e) {}
+  })();
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=921929390306325&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #1F4D3A;
+      --green-dark: #6B0F2A;
+      --gold: #D99A1E;
+      --cream: #FAF6EE;
+      --dark: #1a1a1a;
+      --light-gray: #F5F5F5;
+      --border: #E8E8E8;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* ==========================================
+       HEADER & CHECKMARK
+       ========================================== */
+    .success-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .checkmark-circle {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      box-shadow: 0 8px 24px rgba(31, 77, 58, 0.25);
+      animation: scaleIn 0.6s ease-out;
+    }
+
+    .checkmark-circle svg {
+      width: 45px;
+      height: 45px;
+      stroke: white;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      animation: checkDraw 0.8s ease-out 0.2s both;
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes checkDraw {
+      0% {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+      }
+      100% {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 0;
+      }
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+    }
+
+    .thank-you-subtitle {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ==========================================
+       SOCIAL PROOF COUNTER
+       ========================================== */
+    .social-proof {
+      background: white;
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      margin-bottom: 50px;
+      box-shadow: 0 4px 12px rgba(201, 161, 74, 0.1);
+    }
+
+    .proof-count {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 5px;
+    }
+
+    .proof-text {
+      font-size: 15px;
+      color: #666;
+      letter-spacing: 0.3px;
+    }
+
+    /* ==========================================
+       PRODUCT IMAGE
+       ========================================== */
+    .product-showcase {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .product-image {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 12px 40px rgba(31, 77, 58, 0.15);
+      margin-bottom: 20px;
+    }
+
+    .product-label {
+      font-size: 14px;
+      color: var(--green);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================
+       DELIVERY INFO CARD
+       ========================================== */
+    .delivery-card {
+      background: white;
+      border-left: 5px solid var(--gold);
+      border-radius: 8px;
+      padding: 35px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .delivery-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--green);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .delivery-card p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .delivery-highlight {
+      background: rgba(201, 161, 74, 0.08);
+      border-radius: 6px;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 15px;
+      color: var(--green);
+      font-weight: 500;
+      border-left: 3px solid var(--gold);
+    }
+
+    /* ==========================================
+       PoC CONTACT SECTION
+       ========================================== */
+    .poc-section {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(31, 77, 58, 0.25);
+    }
+
+    .poc-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      margin-bottom: 25px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .poc-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .poc-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 350px;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .poc-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .poc-value {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .poc-value a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .poc-value a:hover {
+      opacity: 0.8;
+    }
+
+    /* ==========================================
+       FAQ SECTION
+       ========================================== */
+    .faq-section {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--green);
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: var(--green);
+    }
+
+    .faq-toggle {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-top: 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      margin-top: 15px;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    /* ==========================================
+       CTA BUTTON
+       ========================================== */
+    .cta-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 8px 24px rgba(31, 77, 58, 0.35);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(31, 77, 58, 0.45);
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+      border: 2px solid white;
+      cursor: pointer;
+    }
+
+    .whatsapp-btn {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
+
+    .whatsapp-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .email-btn {
+      background: white;
+      color: var(--green);
+      border-color: white;
+    }
+
+    .email-btn:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      color: #888;
+      font-size: 14px;
+    }
+
+    .footer p {
+      margin-bottom: 10px;
+    }
+
+    /* ==========================================
+       RESPONSIVE
+       ========================================== */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .poc-section h2 {
+        font-size: 24px;
+      }
+
+      .delivery-card {
+        padding: 25px;
+      }
+
+      .faq-section {
+        padding: 25px;
+      }
+
+      .poc-details {
+        gap: 15px;
+      }
+
+      .poc-item {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- SUCCESS HEADER -->
+  <div class="success-header">
+    <div class="checkmark-circle">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h1>Order Confirmed!</h1>
+    <p class="thank-you-subtitle">
+      Thank you for your purchase. Your Agni order has been received and we're excited to get it to you soon.
+    </p>
+  </div>
+
+  <!-- SOCIAL PROOF -->
+  <div class="social-proof">
+    <div class="proof-count" id="proofCount">2,847</div>
+    <p class="proof-text">people have already transformed their wellness with Agni</p>
+  </div>
+
+  <!-- PRODUCT IMAGE -->
+  <div class="product-showcase">
+    <img src="/images/agni-bottle.svg" alt="Agni Premium Pack" class="product-image">
+    <p class="product-label">Your Order</p>
+  </div>
+
+  <!-- DELIVERY INFO -->
+  <div class="delivery-card">
+    <h2>What Happens Next?</h2>
+    <p>
+      Our team will contact you within <strong>24 hours</strong> to confirm:
+    </p>
+    <ul style="margin-left: 20px; color: #555;">
+      <li style="margin-bottom: 10px;">Your delivery address</li>
+      <li style="margin-bottom: 10px;">Preferred delivery date</li>
+      <li style="margin-bottom: 10px;">Any special instructions or questions</li>
+    </ul>
+    <div class="delivery-highlight">
+      🚚 Expect delivery within 3-5 business days from confirmation
+    </div>
+  </div>
+
+  <!-- PoC CONTACT -->
+  <div class="poc-section">
+    <h2>Arogya Clinic Support Team</h2>
+    <p style="color: rgba(255,255,255,0.9); margin-bottom: 25px; font-size: 15px;">Support: 9am - 10pm IST</p>
+    <div style="display: flex; gap: 12px; justify-content: center; margin-top: 25px; flex-wrap: wrap; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <a href="https://wa.me/919871869909?text=Hi%2C%20I%20just%20ordered%20Agni.%20I%20have%20a%20query." class="contact-button whatsapp-btn" target="_blank" style="flex: 1; min-width: 200px;">
+        💬 WhatsApp (Primary)
+      </a>
+      <a href="https://wa.me/917827059195?text=Hi%2C%20I%20just%20ordered%20Agni.%20I%20have%20a%20query." class="contact-button whatsapp-btn" target="_blank" style="flex: 1; min-width: 200px; opacity: 0.85;">
+        💬 WhatsApp (Alternate)
+      </a>
+      <a href="tel:09555990990" class="contact-button" style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.15); color: white; border: 2px solid white;">
+        ☎️ Call Now
+      </a>
+      <a href="mailto:hello@drmadhusudan.com?subject=Agni%20Order%20Inquiry" class="contact-button email-btn" style="flex: 1; min-width: 200px;">
+        ✉️ Send Email
+      </a>
+    </div>
+  </div>
+
+  <!-- FREE CONSULTATION GUARANTEE SECTION -->
+  <div style="text-align: center; margin: 40px auto; padding: 30px; background: linear-gradient(135deg, rgba(31,77,58,0.1) 0%, rgba(201,161,74,0.05) 100%); border-radius: 12px; border: 1px solid rgba(31,77,58,0.2); max-width: 600px;">
+    <p style="color: var(--dark); font-size: 16px; margin-bottom: 10px; font-weight: 600;">Not Seeing Results in 7 Days?</p>
+    <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Claim your free 1:1 consultation with Dr. Madhu Sudan. We're confident in our product — this is our guarantee to you.</p>
+    <a href="https://wa.me/919871869909?text=Hi%20Dr.%20Madhu%2C%20I%20completed%2030%20days%20with%20Agni%20and%20the%20weight%20has%20not%20gone.%20I%27d%20like%20to%20claim%20my%20free%20consultation.%20Thank%20you." target="_blank" style="display: inline-block; background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%); color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 15px; box-shadow: 0 8px 24px rgba(31, 77, 58, 0.35); transition: all 0.3s ease;">Claim Free Consultation</a>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <h2>Common Questions</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+        When will I receive my order?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        After we confirm your delivery address, we typically ship within 1-2 business days. You can expect delivery within 3-5 business days depending on your location.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+        How should I take Agni?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        One dropper of Agni in half a glass of warm water, twice a day, after breakfast and after dinner. Every day. The first change is in the stomach within a week. The weight moves in week 3 to 4.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+        What if I have questions about the product?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        You can reach out to Rajkumar directly at hello@drmadhusudan.com or call +91 85880 21416. He's available during business hours and can answer any questions about ingredients, usage, or results.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+        Is there a return policy?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        We will not provide 100% refund. We have full 100% trust on our product and it will show you the change in 30 days. If still you feel it's not giving any result, Dr. Madhu will give you free consultation.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+        Are there any side effects?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Agni is made from 100% natural, Ayurvedic ingredients. It's FSSAI approved and GMP certified. However, if you have any pre-existing medical conditions or are on medication, consult with Dr. Madhu Sudan before use.
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <p style="color: #666; margin-bottom: 20px;">Questions or need immediate help?</p>
+    <a href="https://wa.me/919871869909?text=Hi%2C%20I%20just%20ordered%20Agni.%20I%20have%20a%20query." target="_blank" class="cta-button">Contact Arogya Clinic Support Team</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2026 Dr. Madhu Sudan | Arogya Clinic</p>
+  <p>Your health, our commitment.</p>
+</div>
+
+<script>
+// Generate random proof count between 2,500 and 5,000
+function generateProofCount() {
+  // Get stored count or start at 2,500
+  let count = parseInt(localStorage.getItem('kamdevProofCount')) || 2500;
+  
+  // Increment by random 1-3 each visit
+  const increment = Math.floor(Math.random() * 3) + 1;
+  count += increment;
+  
+  // Cap at 5,000 max
+  if (count > 5000) count = 5000;
+  
+  // Save back to localStorage
+  localStorage.setItem('kamdevProofCount', count);
+  
+  // Display
+  document.getElementById('proofCount').textContent = count.toLocaleString();
+}
+
+generateProofCount();
+
+function toggleFaq(element) {
+  element.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "buildCommand": "echo 'No build needed for static site'",
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/thank-you", "destination": "/thank-you/index.html" },
+    { "source": "/((?!api/|images/|public/).*)", "destination": "/index.html" }
+  ]
+}
