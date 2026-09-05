@@ -1937,6 +1937,23 @@ footer .container { max-width: 900px; }
 /* language switch sits under popups */
 .lang-toggle { z-index: 900; }
 
+/* phone: every tap target at least 44px tall, footer text upright */
+.faq-question { min-height: 44px; display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+.footer-links a { display: inline-block; padding: 12px 10px; min-height: 44px; line-height: 20px; }
+.footer-disclaimer { font-style: normal; }
+.mdk-sticky-btn { min-height: 44px; }
+.carousel-arrow { width: 44px; height: 44px; }
+.lang-btn { min-height: 40px; padding: 8px 16px; }
+@media (max-width: 768px) {
+  /* one small switch at the top right of the header, never a pill floating over the page */
+  .lang-toggle { top: 6px; bottom: auto; right: 8px; padding: 3px; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+  .lang-btn { min-height: 34px; padding: 6px 12px; font-size: 12px; }
+  .top-bar { padding-right: 118px; text-align: left; line-height: 1.6; }
+  .top-bar span { margin: 0 8px 0 0; }
+}
+.faq-question { padding-top: 6px; padding-bottom: 6px; }
+@media (max-width: 768px) { .lang-toggle { position: absolute; } }
+
 </style>
 </head>
 <body>
